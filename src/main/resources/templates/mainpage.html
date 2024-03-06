@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bagdar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e6e6e6; /* Change the background color */
+        }
+
+        header {
+            background-color: #007acc; /* Change the header background color */
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #0099cc; /* Change the navigation bar background color */
+            text-align: center;
+            padding: 10px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 10px;
+        }
+
+        .block {
+            display: block;
+            background-color: #fff;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 5px;
+            text-align: center;
+            color: #333;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            border: 1px solid #333;
+        }
+
+        .block:hover {
+            background-color: #ccc;
+        }
+
+        #main-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #007acc; /* Change the footer background color */
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Bagdar</h1>
+</header>
+
+<nav>
+    <a th:href="@{'/'}">Главная</a>
+    <a href="#">О нас</a>
+    <a href="#">Сервисы</a>
+    <a href="#">Контакты</a>
+</nav>
+
+<div id="main-content">
+    <a class="block" th:href="@{'/entpage'}">Математика и физика</a>
+    <a class="block" href="#">Математика и география</a>
+    <a class="block" href="#">Всемирная история и география</a>
+    <a class="block" href="#">Биология и химия</a>
+    <a class="block" href="#">Биология и география</a>
+    <a class="block" href="#">Иностранный язык и всемирная история</a>
+    <a class="block" href="#">Язык обучения и литература</a>
+    <a class="block" href="#">География и иностранный язык</a>
+    <a class="block" href="#">Химия и физика</a>
+    <a class="block" href="#">Всемирная история и основы права</a>
+    <a class="block" href="#">Математика и информатика</a>
+</div>
+
+<footer>
+    &copy; 2023 Bagdar. All rights reserved.
+</footer>
+
+</body>
+</html>

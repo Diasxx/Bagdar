@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bagdar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e6e6e6; /* Change the background color */
+        }
+
+        header {
+            background-color: #007acc; /* Change the header background color */
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #0099cc; /* Change the navigation bar background color */
+            text-align: center;
+            padding: 10px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 10px;
+        }
+
+        .block {
+            display: block;
+            background-color: #fff;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 5px;
+            text-align: center;
+            color: #333;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            border: 1px solid #333;
+        }
+
+        .block:hover {
+            background-color: #ccc;
+        }
+
+        #main-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #007acc; /* Change the footer background color */
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .sub-menu {
+            display: none;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+
+
+        .subblock {
+            display: block;
+            background-color: #fff;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 5px;
+            text-align: center;
+            color: #333;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            /* Customize styles for .subblock */
+            border: 1px solid #0099cc;
+        }
+
+        .subblock:hover {
+            background-color: #ccc;
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Bagdar</h1>
+</header>
+
+<nav>
+    <a th:href="@{'/'}">Главная</a>
+    <a href="#">О нас</a>
+    <a href="#">Сервисы</a>
+    <a href="#">Контакты</a>
+</nav>
+
+<div id="main-content" >
+    <div th:each="gdt : ${grades.gradesTopics}">
+        <a class="block" href="#"   th:text="${gdt.name}"></a>
+        <ul class="sub-menu">
+            <li th:each="subt : ${gdt.subtopics}"><a class="subblock" href="#"  th:text="${subt.name}"></a></li>
+        </ul>
+    </div>
+</div>
+
+
+<footer>
+    &copy; 2023 Bagdar. All rights reserved.
+</footer>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const mainContent = document.getElementById("main-content");
+
+        mainContent.addEventListener("click", function(event) {
+            if (event.target.classList.contains("block")) {
+                const subMenu = event.target.nextElementSibling;
+                if (subMenu.style.display === "block") {
+                    subMenu.style.display = "none";
+                } else {
+                    subMenu.style.display = "block";
+                }
+            }
+        });
+    });
+</script>
+</body>
+</html>

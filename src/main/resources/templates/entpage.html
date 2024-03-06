@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bagdar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e6e6e6; /* Change the background color */
+        }
+
+        header {
+            background-color: #007acc; /* Change the header background color */
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #0099cc; /* Change the navigation bar background color */
+            text-align: center;
+            padding: 10px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 10px;
+        }
+
+        .block {
+            display: block;
+            background-color: #fff;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 5px;
+            text-align: center;
+            color: #333;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            border: 1px solid #333;
+        }
+
+        .block:hover {
+            background-color: #ccc;
+        }
+
+        #main-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #007acc; /* Change the footer background color */
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .button {
+            display: block;
+            background-color: #007acc; /* Цвет фона кнопки */
+            color: #fff;
+            padding: 4px;
+            margin-left: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #0055a4; /* Цвет фона кнопки при наведении */
+        }
+
+        .subject{
+            background-color: #cfecf7;
+            margin: 10px;
+            border-radius: 5px;
+            text-align: center;
+            color: #333;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            border: 1px solid #333;
+        }
+
+        .subject div{
+            display: flex;
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Bagdar</h1>
+</header>
+
+<nav>
+    <a th:href="@{'/'}">Главная</a>
+    <a href="#">О нас</a>
+    <a href="#">Сервисы</a>
+    <a href="#">Контакты</a>
+</nav>
+
+<div id="main-content">
+
+    <div class="subject">
+
+        <a class="block" th:href="@{'/gradespage'}">Математика</a>
+
+        <div>
+            <button class="button">Все знаю</button>
+            <button class="button">Не знаю</button>
+            <button class="button">Изучаю</button>
+        </div>
+
+    </div>
+
+    <div class="subject">
+
+        <a class="block" href="grades.html">Физика</a>
+
+        <div>
+            <button class="button">Все знаю</button>
+            <button class="button">Не знаю</button>
+            <button class="button">Изучаю</button>
+        </div>
+
+    </div>
+
+    <div class="subject">
+
+        <a class="block" href="grades.html">История Казахстана</a>
+
+        <div>
+            <button class="button">Все знаю</button>
+            <button class="button">Не знаю</button>
+            <button class="button">Изучаю</button>
+        </div>
+
+    </div>
+
+</div>
+
+
+<footer>
+    &copy; 2023 Bagdar. All rights reserved.
+</footer>
+
+</body>
+</html>
